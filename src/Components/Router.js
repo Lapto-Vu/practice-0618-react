@@ -2,10 +2,10 @@ import React from "react";
 import { HashRouter as Router, Route } from "react-router-dom";
 import Header from "./Header";
 import Coins from "../Screens/Coins/";
-import Exchanges from "../Screens/Exchanges";
-import Prices from "../Screens/Prices";
+import Exchanges from "../Screens/Exchanges/";
+import Prices from "../Screens/Prices/";
 
-export default () => {
+const Routers = () => {
   return (
     <Router>
       <Header />
@@ -15,3 +15,5 @@ export default () => {
     </Router>
   );
 };
+
+export default Routers

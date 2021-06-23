@@ -1,19 +1,19 @@
 import React from "react";
-import CoinsPresenter from "./CoinsPresenter";
+import ExchangesPresenter from"./ExchangesPresenter";
 import { bitcoinApi } from "../../api";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default class extends React.Component {
     state = {
-        coins: null,
+        exchanges: null,
         loading: true
     }
 
     async componentDidMount() {
         try {
-            const {data: coins} = await bitcoinApi.coins();
+            const {data: exchanges} = await bitcoinApi.exchanges();
             this.setState({
-                coins
+                exchanges
             })
         } catch {
             this.setState({
@@ -25,11 +25,10 @@ export default class extends React.Component {
             })
         }
     }
-
     render() {
-        const { coins, loading, error } = this.state;
+        const { exchanges, loading, error } = this.state;
         return (
-            <CoinsPresenter coins={coins} loading={loading} error={error}/>
+            <ExchangesPresenter exchanges={exchanges} loading={loading} error={error}/>
         )
     }
 }

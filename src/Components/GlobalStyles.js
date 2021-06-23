@@ -4,8 +4,7 @@ import reset from "styled-reset";
 const globalStyles = createGlobalStyle`
     ${reset};
     a{
-        text-decoration:none;
-        color:inherit;
+        color:black;
     }
     *{
         box-sizing:border-box;
